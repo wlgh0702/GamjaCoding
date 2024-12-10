@@ -1,0 +1,12 @@
+###
+POST http://localhost:8080/insertUser
+Content-Type: application/json
+
+{
+  "name" : "jihoPark",
+  "age" : 28,
+  "weight" : 83.2
+}
+
+###
+GET http://localhost:8080/get
