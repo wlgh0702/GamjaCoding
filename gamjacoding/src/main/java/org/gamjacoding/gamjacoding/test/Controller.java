@@ -12,7 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class Controller {
 
-    public TestRepository testRepository;
+    private final TestRepository testRepository;
+
+    /*public Controller(TestRepository testRepository) {
+        this.testRepository = testRepository;
+    }*/
 
     @GetMapping("/get")
     public String getTest() {
@@ -21,7 +25,6 @@ public class Controller {
 
     @PostMapping("/insertUser")
     public Test insertUser(@RequestBody Test test) {
-        System.out.println(test);
         return testRepository.save(test);
     }
 }
